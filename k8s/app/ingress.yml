@@ -1,0 +1,26 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app
+  annotations:
+    kubernetes.io/ingress.class: ingress
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
+  labels:
+    app: app
+spec:
+  rules:
+    - host: example.8grams.tech
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: app
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - example.8grams.tech
+      secretName: tls-app

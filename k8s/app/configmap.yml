@@ -1,0 +1,38 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-cm
+data:
+  APP_NAME: "Laravel"
+  APP_ENV: "local"
+  APP_KEY: "base64:Z0pHUWn3eFfx83+dRZ9a3yziMkG5m8yPm+Ee/jSx/ww:"
+  APP_DEBUG: "true"
+  APP_URL: "https://example.com"
+  LOG_CHANNEL: "errorlog"
+  LOG_LEVEL: "debug"
+  DB_CONNECTION: "mysql"
+  DB_HOST: "mysql.mysql"
+  DB_PORT: "3306"
+  DB_DATABASE: "laravel"
+  DB_USERNAME: "root"
+  DB_PASSWORD: "xxx"
+  BROADCAST_DRIVER: "log"
+  CACHE_DRIVER: "file"
+  FILESYSTEM_DISK: "local"
+  QUEUE_CONNECTION: "redis"
+  SESSION_DRIVER: "file"
+  SESSION_LIFETIME: "120"
+  MEMCACHED_HOST: "127.0.0.1"
+  REDIS_HOST: "redis-master"
+  REDIS_PASSWORD: null
+  REDIS_PORT: "6379"
+  MAIL_MAILER: "smtp"
+  MAIL_HOST: "mailpit"
+  MAIL_PORT: "1025"
+  MAIL_USERNAME: null
+  MAIL_PASSWORD: null
+  MAIL_ENCRYPTION: null
+  MAIL_FROM_ADDRESS: "hello@example.com"
+  MAIL_FROM_NAME: "Laravel"
+---

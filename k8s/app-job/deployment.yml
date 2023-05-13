@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-job
+  labels:
+    app: app-job
+spec:
+  selector:
+    matchLabels:
+      app: app-job
+  template:
+    metadata:
+      labels:
+        app: app-job
+    spec:
+      containers:
+        - name: app-job
+          image: ghcr.io/8grams/app:latest
+          imagePullPolicy: Always
+          command:
+            - php
+          args:
+            - artisan
+            - queue:work
+          envFrom:
+            - configMapRef:
+                name: app-cm
+---
